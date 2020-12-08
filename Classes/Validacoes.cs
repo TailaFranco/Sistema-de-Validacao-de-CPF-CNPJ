@@ -111,23 +111,23 @@ namespace POO_Heranca.Classes
         }
     public static bool ValidaCNPJ(string vrCNPJ)
 
-{
+        {
 
-string CNPJ = vrCNPJ.Replace(".", "");
+        string CNPJ = vrCNPJ.Replace(".", "");
 
-      CNPJ = CNPJ.Replace("/", "");
+        CNPJ = CNPJ.Replace("/", "");
 
-      CNPJ = CNPJ.Replace("-", "");
+        CNPJ = CNPJ.Replace("-", "");
 
  
 
-      int[] digitos, soma, resultado;
+        int[] digitos, soma, resultado;
 
-      int nrDig;
+        int nrDig;
 
-      string ftmt;
+        string ftmt;
 
-      bool[] CNPJOk;
+        bool[] CNPJOk;
 
  
 
@@ -169,21 +169,21 @@ string CNPJ = vrCNPJ.Replace(".", "");
 
                   if (nrDig <= 11)
 
-soma[0] += (digitos[nrDig] *
+            soma[0] += (digitos[nrDig] *
 
-  int.Parse(ftmt.Substring(
+            int.Parse(ftmt.Substring(
 
-  nrDig + 1, 1)));
+            nrDig + 1, 1)));
 
                   if (nrDig <= 12)
 
-soma[1] += (digitos[nrDig] *
+                    soma[1] += (digitos[nrDig] *
 
-  int.Parse(ftmt.Substring(
+                    int.Parse(ftmt.Substring(
 
-  nrDig, 1)));
+                    nrDig, 1)));
 
-}
+                }
 
  
 
@@ -203,28 +203,28 @@ soma[1] += (digitos[nrDig] *
 
                   else
 
-CNPJOk[nrDig] = (
+                    CNPJOk[nrDig] = (
 
-digitos[12 + nrDig] == (
+                    digitos[12 + nrDig] == (
 
-11 - resultado[nrDig]));
+                    11 - resultado[nrDig]));
+
+                    }
+
+            return (CNPJOk[0] && CNPJOk[1]);
 
             }
 
-return (CNPJOk[0] && CNPJOk[1]);
+            catch
 
-}
-
-      catch
-
-      {
+            {
 
           return false;
 
-      }
+            }
 
-}
+            }
 
-    }
+            }
 
-}
+            }
