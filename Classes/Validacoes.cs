@@ -16,10 +16,7 @@ namespace POO_Heranca.Classes
 
             if (valor.Length != 11)
 
-                return false;
-
- 
-
+            return false;
             bool igual = true;
 
             for (int i = 1; i < 11 && igual; i++)
@@ -29,7 +26,7 @@ namespace POO_Heranca.Classes
 
             if (igual || valor == "12345678909")
 
-                return false;
+            return false;
 
             int[] numeros = new int[11];
 
